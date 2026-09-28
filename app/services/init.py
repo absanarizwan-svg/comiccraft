@@ -1,0 +1,5 @@
+"""
+ComicCraft application package.
+"""
+
+

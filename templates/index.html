@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ComicCraft - AI Comic Creator</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎨 ComicCraft</h1>
+
+        <p>AI-Powered Comic Story Creator</p>
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form action="/generate" method="post">
+
+            <div class="form-group">
+                <label for="story_prompt">
+                    Story Prompt
+                </label>
+
+                <textarea
+                    id="story_prompt"
+                    name="story_prompt"
+                    placeholder="Enter your story idea..."
+                    required
+                ></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="character_name">
+                    Character Name
+                </label>
+
+                <input
+                    id="character_name"
+                    type="text"
+                    name="character_name"
+                    placeholder="Enter character name"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="setting">
+                    Setting
+                </label>
+
+                <input
+                    id="setting"
+                    type="text"
+                    name="setting"
+                    placeholder="Example: Chennai"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="tone">
+                    Tone
+                </label>
+
+                <input
+                    id="tone"
+                    type="text"
+                    name="tone"
+                    placeholder="Example: Funny"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="art_style">
+                    Art Style
+                </label>
+
+                <input
+                    id="art_style"
+                    type="text"
+                    name="art_style"
+                    placeholder="Example: Cartoon"
+                    required
+                >
+            </div>
+
+
+            <button type="submit">
+                Generate Comic
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
